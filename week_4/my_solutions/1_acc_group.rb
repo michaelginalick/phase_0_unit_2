@@ -114,8 +114,8 @@ def groupGenerator(array)
 	group = Array.new
 	i = 0
 	while random.length > 3
-		group[i]=[random[0], random[1], random[2], random[3]].to_set
-		4.times{random.shift}
+		group[i]= random.take(4)
+		random = random.drop(4)
 		i += 1
 	end
 	i = 0
