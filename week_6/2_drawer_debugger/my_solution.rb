@@ -46,7 +46,7 @@ end
 
 
 class Silverware
-	attr_reader :type
+	attr_reader :type, :clean
 
 	# Are there any more methods needed in this class?
 
@@ -64,9 +64,6 @@ class Silverware
 		@clean = true
 	end
 
-	def clean
-		@clean
-	end
 end
 
 knife1 = Silverware.new("knife")
@@ -119,25 +116,25 @@ assert {silverware_drawer.instance_variable_get(:@open) == false }
 silverware_drawer.add_item(fork)
 silverware_drawer.add_item(knife1)
 silverware_drawer.add_item(sharp_knife)
-assert { silverware_drawer.instance_variable_get(:@contents).include?(fork) }
-assert { silverware_drawer.instance_variable_get(:@contents).include?(knife1) }
-assert { silverware_drawer.instance_variable_get(:@contents).include?(sharp_knife) }
+assert { silverware_drawer.contents.include?(fork) }
+assert { silverware_drawer.contents.include?(knife1) }
+assert { silverware_drawer.contents.include?(sharp_knife) }
 
 silverware_drawer.remove_item(fork)
-assert { silverware_drawer.instance_variable_get(:@contents).include?(fork) == false }
-assert { silverware_drawer.instance_variable_get(:@contents).include?(knife1) }
-assert { silverware_drawer.instance_variable_get(:@contents).include?(sharp_knife) }
+assert { silverware_drawer.contents.include?(fork) == false }
+assert { silverware_drawer.contents.include?(knife1) }
+assert { silverware_drawer.contents.include?(sharp_knife) }
 
 silverware_drawer.dump
-assert { silverware_drawer.instance_variable_get(:@contents).length == 0 }
+assert { silverware_drawer.contents.length == 0 }
 
 assert {fork.class == Silverware}
 
 fork.eat
-assert { fork.instance_variable_get(:@clean) == false }
+assert { fork.clean == false }
 
 fork.clean_silverware
-assert { fork.instance_variable_get(:@clean) == true }
+assert { fork.clean == true }
 
 
 # 5. Reflection 
@@ -154,7 +151,7 @@ I call #eat on an object and then use #assert to test the result, or should I ca
 #eat from within the #assert method, as shown below?
 	assert do
 		fork.eat
-		fork.instance_variable_get(:@clean) == false
+		fork.clean == false
 	end
 
 I also don't know how to test methods where what is returned is in a puts/print
