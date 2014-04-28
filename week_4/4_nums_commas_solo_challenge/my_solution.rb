@@ -19,6 +19,23 @@
 
 # 3. Refactored Solution
 
+def separate_comma(int)
+  array = int.to_s.split("")
+  new_array=[]
+  if array.length < 4
+    x = array
+  end
+  comma = 3
+  while index < array.length
+    if array.length == 4
+        x = array.insert(1, ",")
+    elsif array.length > 4
+      x = array.insert(index, ",")
+    end
+    comma +=4
+  end
+  (new_array << x).join("")
+end
 
 
 # 4. Reflection 
