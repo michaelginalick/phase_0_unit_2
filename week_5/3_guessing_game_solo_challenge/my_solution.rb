@@ -10,16 +10,42 @@
 # Steps:
 
 
-# 3. Initial Solution
+# 3. Initial Solution   
+#Define an instance method GuessingGame#guess which takes an integer called guess as its input. 
+#guess should return the symbol :high if the guess is larger than the answer, 
+#:correct if the guess is equal to the answer, 
+#and :low if the guess is lower than the answer.
+
+#Define an instance method GuessingGame#solved? which returns true if the most recent guess was correct 
+#and false otherwise.
 
 class GuessingGame
   def initialize(answer)
-    # Your initialization code goes here
+    @answer = answer
   end
   
-  # Make sure you define the other required methods, too
+  def guess(num)
+    @num = num
+    if @num > @answer
+       return :high 
+   else if
+       @num < @answer
+       return: low
+       if @num == @answer
+          return :true
+        else
+        return  :false
+  end
+  
+  def solved?
+    if @num == @answer
+       return :correct
+     else
+       return: false
+  return false unless @num == @answer
+     return true
+  end
 end
-
 
 
 
