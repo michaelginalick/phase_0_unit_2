@@ -3,7 +3,8 @@
 # I worked on this challenge [by myself, with: ].
 
 # EXPLANATION OF require_relative
-#
+#require_relative complements the builtin method 
+#require by allowing you to load a file that is relative to the file containing the require_relative statement.
 #
 require_relative 'state_data'
 
