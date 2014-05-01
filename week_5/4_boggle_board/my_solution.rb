@@ -37,10 +37,10 @@ puts create_word(boggle_board, [2,1], [1,1], [1,2], [0,3])  #=> returns "code"  
 
 
 # Refactored Solution
- def get_row(row)
-            @boggle_board(row)     
-   end              
-
+    @boggle_board = boggle_board
+def get_row(row)
+     @boggle_board[row]
+end
   
 # DRIVER TESTS GO BELOW THIS LINE
 
@@ -57,12 +57,19 @@ puts create_word(boggle_board, [2,1], [1,1], [1,2], [0,3])  #=> returns "code"  
 # Pseudocode
 
 # Initial Solution
-
+def get_col(col)
+      @boggle_board[col]
+end                
 
 # Refactored Solution
 
+def get_col(col)
+  @boggle_board.map { |row| row[col] }
+end
 
 # DRIVER TESTS GO BELOW THIS LINE
 
-
+put get_col(3)
+put get_col(1)
+put get_col(2)
 # Reflection 
