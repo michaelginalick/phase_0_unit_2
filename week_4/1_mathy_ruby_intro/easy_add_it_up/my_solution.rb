@@ -24,8 +24,7 @@ require_relative "my_solution"
 
 
 def total(array)
-  sum = 0
-  array.inject{|sum,x| sum + x}
+  array.inject(0){|result,element| result + element}
 def sentence_maker(words)
     words.map! { |x| x.class == String ? x : x.to_s }
     words.map.downcase!
