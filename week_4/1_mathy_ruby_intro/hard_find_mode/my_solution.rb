@@ -11,7 +11,8 @@
 # What is the input?
 # What is the output? (i.e. What should the code return?)
 # What are the steps needed to solve the problem?
-
+# isolate each value in the array and compare it to other values in the same array. If they are equal, set to variable
+# return variable with the highest value
 
 # 2. Initial Solution
 
@@ -23,20 +24,12 @@
 require_relative "my_solution"
 
 def mode(array)
-  seen = Hash.new(0)
-  max = 0
-  max_elems = []
-  array.each do |value|
-    seen[value] += 1
-    if seen[value] > max
-      max = seen[value]
-      max_elems = [value]
-    elsif seen[value] == max
-      max_elems << value
-    end
-    end
-     max_elems
-  end
+  count = Hash.new(0)
+  array.each {|i| count[i] +=1}
+  max = count.select{|k| v ===count.values.max}
+  return max.keys
+end
+
 
 describe 'mode' do
   let(:array_1) { [1, 2, 3, 4, 5, 5, 7] }
