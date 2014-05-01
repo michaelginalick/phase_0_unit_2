@@ -17,9 +17,13 @@ boggle_board = [["b", "r", "a", "e"],
 
 # Refactored Solution
 
-
+ def create_word(board, *coords)
+    coords.map { |coord| board[coord.first][coord.last]}.join("")
+  end
 # DRIVER TESTS GO BELOW THIS LINE
 
+puts create_word(boggle_board, [0,1], [0,2], [1,2])
+puts create_word(boggle_board, [2,1], [1,1], [1,2], [0,3])  #=> returns "code"  puts create_word(boggle_board, [0,1], [0,2], [1,2])
 
 # Reflection 
 
@@ -33,10 +37,14 @@ boggle_board = [["b", "r", "a", "e"],
 
 
 # Refactored Solution
+ def get_row(row)
+            @boggle_board(row)     
+   end              
 
-
+  
 # DRIVER TESTS GO BELOW THIS LINE
 
+ get_row(2)
 
 # Reflection 
 
