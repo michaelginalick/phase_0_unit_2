@@ -42,15 +42,40 @@ class GuessingGame
        return :correct
      else
        return: false
+  end
   return false unless @num == @answer
      return true
-  end
 end
 
 
 
 # 4. Refactored Solution
 
+class GuessingGame
+  def initialize(answer)
+    @answer = answer
+  end
+
+  def guess(num)
+    @num = num
+    if @num > @answer
+       return :high
+   else if
+       @num < @answer
+       return :low
+       else @num == @answer
+          return :correct
+
+    end
+  end
+  end
+
+  def solved?
+  return false unless @num == @answer
+     return true
+
+ end
+end
 
 
 
