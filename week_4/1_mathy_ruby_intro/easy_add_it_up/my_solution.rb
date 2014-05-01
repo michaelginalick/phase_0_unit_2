@@ -25,8 +25,10 @@ require_relative "my_solution"
 
 def total(array)
   array.inject(0){|result,element| result + element}
+
+
 def sentence_maker(words)
-    words.map! { |x| x.class == String ? x : x.to_s }
+    words.map! { |item| itme.class == String ? item : item.to_s }
     words.map.downcase!
     words[0].capitalize!
     words[-1] = "#{words[-1]}."
