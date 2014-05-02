@@ -16,13 +16,12 @@
 # 2. Initial Solution
 
 def median(array)
+    array.sort
     num = array.length
-    if num == even?
-      num % 2
+   if array == even?
+      array % 2
     else
-      num == odd?
-      odd = num-1
-      num % odd
+      array % (num-1)
 end  
 
 
