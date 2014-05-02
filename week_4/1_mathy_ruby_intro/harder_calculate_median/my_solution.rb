@@ -18,10 +18,10 @@
 def median(array)
     array.sort
     num = array.length
-   if array == even?
+   if num == even?
       array % 2
     else
-      array % (num-1)
+      array % (array.length-1)
 end  
 
 
