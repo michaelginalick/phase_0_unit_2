@@ -15,7 +15,15 @@
 
 # 2. Initial Solution
 
-
+def median(array)
+    num = array.length
+    if num == even?
+      num % 2
+    else
+      num == odd?
+      odd = num-1
+      num % odd
+end  
 
 
 # 3. Refactored Solution
