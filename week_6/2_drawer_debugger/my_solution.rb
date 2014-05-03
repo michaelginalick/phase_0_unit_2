@@ -29,11 +29,12 @@ def add_item
 @contents << item
 end
 
-def remove_item(item = @contents.pop) #what is `#pop` doing?
+def remove_item(item = @contents.pop) #what is `#pop` doing? # pop is returning the last item in contents array
 @contents.delete(item)
 end
 
-def dump  # what should this method return?
+def dump  # what should this method return? This should return true if contents array is empty
+@contents = true
 puts "Your drawer is empty."
 end
 
