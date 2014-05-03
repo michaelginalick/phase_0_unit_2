@@ -10,8 +10,8 @@
 
 # 3. Initial Solution
 class BoggleBoard
- 
-  #your code here
+   def initialize(board)
+    @board = board
  
 end
  
