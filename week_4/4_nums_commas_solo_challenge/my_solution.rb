@@ -28,7 +28,7 @@ def separate_comma(int)
   index = 1
    while index < array.length
        array.insert(index,(","))
-       index +=4
+       index = index +4
          if index >= array.length
            array.join("")
          end
