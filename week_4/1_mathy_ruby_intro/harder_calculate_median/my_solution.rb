@@ -21,7 +21,7 @@ def median(array)
    if num == even?
       array % 2
     else
-      array % (array.length-1)
+      array % (array.length-1 + array.length -2)/2)
 end  
 
 
