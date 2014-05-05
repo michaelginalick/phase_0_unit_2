@@ -63,10 +63,23 @@ end
 
 # Refactored Solution
 
-def get_col(col)
-  @boggle_board.map { |row| row[col] }
+class Boggle
+    def initialize(column)
+        @column = column
+        @boggle_board = [["b", "r", "a", "e"],
+                ["i", "o", "d", "t"],
+                ["e", "c", "l", "r"],
+                ["t", "a", "k", "e"]]
+    end
+    
+    def get_column
+        new_array = []
+        @boggle_board.each do |row|
+            new_array.push(row[@column])
+        end
+        return new_array
+    end
 end
-
 # DRIVER TESTS GO BELOW THIS LINE
 
 put get_col(3)
