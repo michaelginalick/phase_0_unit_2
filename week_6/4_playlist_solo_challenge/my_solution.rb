@@ -5,8 +5,14 @@
 
 
 # Pseudocode
-
-
+#class can be PlayList
+#initialize song and playlist
+#def add_song
+#@song << item
+#end
+#def remove_item(item = @playlist.pop) # pop is returning the last item in contents array
+#@playlist.delete(item)
+#end
 
 # Initial Solution
 
