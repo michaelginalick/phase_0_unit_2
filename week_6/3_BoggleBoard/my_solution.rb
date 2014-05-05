@@ -28,10 +28,12 @@ class BoggleBoard
     @board.map{|row| row[col]}
   end
   
-  def get_diagonal(row,col)
-      @board[row]
-      @board[col]
- 
+  def get_diagonal(coord1,cooord2)
+      @board[coord1]
+      @board[cooord2]
+      
+      if coord1 > 0 
+ end
  end
 
 
