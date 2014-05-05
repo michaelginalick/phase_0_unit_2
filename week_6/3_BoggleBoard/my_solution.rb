@@ -9,15 +9,22 @@
 
 
 # 3. Initial Solution
-class BoggleBoard
-   def initialize(board)
-    @board = board
-    @cords = cords
+class Boggle
+    def initialize(column)
+        @column = column
+        @boggle_board = [["b", "r", "a", "e"],
+                ["i", "o", "d", "t"],
+                ["e", "c", "l", "r"],
+                ["t", "a", "k", "e"]]
+    end
     
-    def create_word(board, *coords)
-    coords.map { |coord| board[coord.first][coord.last]}.join("")
-   end
- 
+    def get_column
+        new_array = []
+        @boggle_board.each do |row|
+            new_array.push(row[@column])
+        end
+        return new_array
+    end
 end
  
  
