@@ -9,32 +9,27 @@
 
 
 # 3. Initial Solution
-class Boggle
-    def initialize(column)
-        @column = column
-        @boggle_board = [["b", "r", "a", "e"],
-                ["i", "o", "d", "t"],
-                ["e", "c", "l", "r"],
-                ["t", "a", "k", "e"]]
-    end
-    
-    def get_column
-        new_array = []
-        @boggle_board.each do |row|
-            new_array.push(row[@column])
-        end
-        return new_array
-    end
-end
+class BoggleBoard
+  attr_reader :board
+  
+  def initialize(board)
+    @board = board
+  end
+
+  def create_word(*coords)
+      coords.map { |coord| @board[coord.first][coord.last]}.join("")
+  end
  
+  def get_row(row)
+    @board[row]
+  end
+
+  def get_col(col)
+    @board.map{|row| row[col]}
+  end
  
-dice_grid = [["b", "r", "a", "e"],
-             ["i", "o", "d", "t"],
-             ["e", "c", "l", "r"],
-             ["t", "a", "k", "e"]]
- 
-boggle_board = BoggleBoard.new(dice_grid)
- 
+ end
+
 
 
 # 4. Refactored Solution
@@ -47,7 +42,16 @@ boggle_board = BoggleBoard.new(dice_grid)
 # 1. DRIVER TESTS GO BELOW THIS LINE
 # create driver test code to retrieve a value at a coordinate here:
 # implement tests for each of the methods here:
-
-puts create_word(boggle_board, [1,2], [1,1], [2,1],[3,2])
+dice_grid = [["b", "r", "a", "e"],
+             ["i", "o", "d", "t"],
+             ["e", "c", "l", "r"],
+             ["t", "a", "k", "e"]]
+ 
+boggle_board = BoggleBoard.new(dice_grid)
+ 
+ def assert
+  raise "Assertion failed!" unless yield
+end
+assert { boggle_board.get_row(1) === ["i", "o", "d", "t"] }
 
 # 5. Reflection 
