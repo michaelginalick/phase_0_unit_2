@@ -15,6 +15,31 @@
 
 # 2. Initial Solution
 
+class array
+
+
+ def pad!(min_size, value = nil)
+   x = min_size - self.count
+   x.times {self << value}
+   self
+ end
+ 
+ def pad(min_size, value = nil)
+   self.clone.pad!(min_size, value =nil)
+ end
+ end
+ 
+
+
+
+
+
+
+
+
+
+  
+end
 
 
 
