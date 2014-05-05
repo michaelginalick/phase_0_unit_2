@@ -12,6 +12,11 @@
 class BoggleBoard
    def initialize(board)
     @board = board
+    @cords = cords
+    
+    def create_word(board, *coords)
+    coords.map { |coord| board[coord.first][coord.last]}.join("")
+   end
  
 end
  
@@ -36,5 +41,6 @@ boggle_board = BoggleBoard.new(dice_grid)
 # create driver test code to retrieve a value at a coordinate here:
 # implement tests for each of the methods here:
 
+puts create_word(boggle_board, [1,2], [1,1], [2,1],[3,2])
 
 # 5. Reflection 
