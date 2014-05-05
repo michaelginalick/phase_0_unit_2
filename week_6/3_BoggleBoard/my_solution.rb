@@ -27,6 +27,10 @@ class BoggleBoard
   def get_col(col)
     @board.map{|row| row[col]}
   end
+  
+  def get_diagonal(row,col)
+      @board[row]
+      @board[col]
  
  end
 
