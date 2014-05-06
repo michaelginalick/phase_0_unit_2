@@ -20,6 +20,55 @@
 
 
 # Refactored Solution
+class Song
+	attr_reader :title, :artist 
+
+	def initialize(title, artist)
+		@title = title
+		@artist = artist
+	end
+
+	def play
+		return self
+	end
+end
+
+
+#def view_contents
+# puts "The song contains:"
+      # @song.each {|my_playlist| puts "-" 
+
+
+
+
+
+class Playlist
+  def initialize(*song)
+    @playlist = @song
+  end
+  
+  
+  
+  def add(*song)
+    @playlist ||=[]
+    @playlist << song
+  end
+  
+  def num_of_tracks
+    @playlist.length
+  end
+  
+  def remove(song)
+    @playlist.delete(song)
+  end
+  
+  def includes?(song)
+    @playlist = true
+  end
+  def play_all
+    return self
+  end
+end
 
 
 
@@ -49,3 +98,5 @@ my_playlist.display
 
 
 # Reflection 
+#I felt this was a great excerise! It challenged me, and took me awhile to figure out, but I feel really confident about 
+#what is happening in the program.
