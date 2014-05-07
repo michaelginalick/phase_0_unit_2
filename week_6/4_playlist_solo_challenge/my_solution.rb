@@ -52,6 +52,8 @@ class Playlist
   def add(*song)
     @playlist ||=[]
     @playlist << song
+    new_song.each{|song| @playlist << song }
+    keys = song.keys
   end
   
   def num_of_tracks
