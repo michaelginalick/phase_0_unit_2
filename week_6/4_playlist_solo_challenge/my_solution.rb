@@ -28,8 +28,8 @@ class Song
 		@artist = artist
 	end
 
-	def play
-		return self
+	def new(song)
+	    return song
 	end
 end
 
