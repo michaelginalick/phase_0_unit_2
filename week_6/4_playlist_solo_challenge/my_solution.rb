@@ -49,26 +49,31 @@ class Playlist
   
   
   
-  def add(*song)
-    @playlist ||=[]
-    @playlist << song
-    new_song.each{|song| @playlist << song }
-    keys = song.keys
+  def add(new_song)
+    	new_song.each{|song| @playlist << song }
+    	keys = song.keys
+    	puts keys
   end
   
   def num_of_tracks
-    @playlist.length
+    	@playlist.length
   end
   
-  def remove(song)
-    @playlist.delete(song)
+  def remove(delete_songs)
+    	delete_songs.each do {|song| @playlist.delete(song)}
   end
   
   def includes?(song)
-    @playlist = true
+	 @playlist.include?(song)
   end
+  
+  
   def play_all
-    return self
+    	@playlist.each{|song| song.play}
+  end
+  
+  def display
+  	@playlist.each{|song| puts "#{song.title}, #{song.artist}"}
   end
 end
 
