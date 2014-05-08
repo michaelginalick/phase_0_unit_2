@@ -71,6 +71,7 @@ end
 
 
 # 1. DRIVER TESTS GO BELOW THIS LINE
+family_car = Car.new("Prius", "Gray")
 point_25__miles = Car.distance(".25")
 twenty_five_miles_mph = Car.speed("25")
 direction = Car.turn == right
