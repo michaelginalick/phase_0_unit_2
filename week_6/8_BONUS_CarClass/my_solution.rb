@@ -29,6 +29,8 @@
 # 3. Initial Solution
 
 class Car
+	
+	attr_reader :car, :model
 	def initialize(model,color)
       		@model = model
       		@color = color
