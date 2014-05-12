@@ -1,4 +1,4 @@
-# U2.W6: Create a Car Class from User Stories
+ #U2.W6: Create a Car Class from User Stories
 
 
 # I worked on this challenge [by myself, with: ].
@@ -29,34 +29,69 @@
 # 3. Initial Solution
 
 class Car
+
+	attr_reader :model, :color
 	
-	attr_reader :car, :model
 	def initialize(model,color)
       		@model = model
       		@color = color
-      	end
-
-  def distance
   end
   
-  def speed
+  def model
   end
-
-  def turn
+  
+  def color
   end
-
+  
+  #set distance
+  def distance_traveled(distance)
+      @distance_traveled = distance
+  end
+  
+  #get distance traveled
+  def get_distance_traveled
+      @distance_traveled
+  end
+  
+  def total_distance_traveled(a,b,c,d)
+    (a + b +c + d)
+  end 
+  
+  #set speed
+  def set_speed(mph)
+    @speed = mph
+  end
+  
+  #get speed
   def check_speed
+     @speed
+   end
+   
+   #turn right
+  def right_turn(right)
+    @right_turn = right
+  end
+  
+  #turn_left
+  def left_turn(left)
+    @left_turn = left
   end
 
   def accelerate
-  end
-  
-  def decelerate
+    @accelerate = true
+    @decelerate = false
   end
 
-  def stop
+  def decelerate
+    @decelerate = true
+    @accelerate = false
   end
-  
+
+  def stop(stop)
+    @stop = stop
+
+  end
+
   def output
   end
 end
@@ -72,11 +107,35 @@ end
 
 # 1. DRIVER TESTS GO BELOW THIS LINE
 family_car = Car.new("Prius", "Gray")
-point_25__miles = Car.distance(".25")
-twenty_five_miles_mph = Car.speed("25")
-direction = Car.turn == right
-school_zone = car.check_speed
-thirty_five_miles_mph = Car.speed("35")
 
+#set and get distance
+family_car.distance_traveled('.25')
+p family_car.get_distance_traveled
 
-# 5. Reflection 
+#set and get speed
+family_car.set_speed(25)
+p family_car.check_speed
+
+#turn right
+p family_car.right_turn("right")
+
+#set and get speed
+family_car.set_speed(15)
+p family_car.check_speed
+
+#set and get distance
+family_car.distance_traveled('1.5')
+p family_car.get_distance_traveled
+
+#turn left
+p family_car.right_turn("right")
+
+#set and get distance
+family_car.distance_traveled('1.4')
+p family_car.get_distance_traveled
+
+#turn left
+p family_car.stop("stop")
+
+#total distance
+p family_car.total_distance_traveled(".25".to_f, 1.5, ".25".to_f, 1.4)
