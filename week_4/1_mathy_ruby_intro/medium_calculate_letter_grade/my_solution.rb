@@ -16,6 +16,27 @@
 # 2. Initial Solution
 
 
+def get_grade(array)
+
+   length =  array.length
+   sum =  array.inject{|element,result| element + result}
+    get_grade =  (sum/length)
+     case get_grade
+      when 90..100
+      "A"
+      when 80..90
+       "B"
+      when 70..80
+       "C"
+      when 60..70
+       "D"
+      when 0..60
+       "F"
+      else
+     "Error"
+      end
+
+end
 
 
 # 3. Refactored Solution
