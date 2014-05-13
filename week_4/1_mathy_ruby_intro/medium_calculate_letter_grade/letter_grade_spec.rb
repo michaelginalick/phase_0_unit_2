@@ -9,6 +9,7 @@ describe 'get_grade' do
   
   it 'is defined as a method' do
     defined?(get_grade).should eq 'method'
+    p "true"
   end
   it 'returns "A" when the average is >= 90' do
     get_grade(arrayA).should eq "A"
